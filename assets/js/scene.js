@@ -172,10 +172,11 @@
     contact: { geo: geoOctahedron,          side: -1, spin: [-0.12, 0.08], hero: { x: 0.60, y: 0.22, s: 0.38, a: 0.95 } },
     project: { geo: function () { return geoKnot(2, 3, 0.34, 130, 9); }, side: -1, spin: [-0.14, 0.09], hero: { x: 0.60, y: 0.24, s: 0.40, a: 0.95 } }
   };
-  /* x = 1 means the centre sits exactly on the screen edge → half of the solid stays visible */
+  /* x = 1 means the centre sits exactly on the screen edge → half of the solid stays visible
+     the resting opacity comes from CSS (--gl-rest) so it can differ per theme */
   var END = {
-    wide:   { x: 1.00, y: 0.06, s: 0.58, a: 0.07 },
-    narrow: { x: 1.00, y: 0.10, s: 0.50, a: 0.07 }
+    wide:   { x: 1.00, y: 0.06, s: 0.58 },
+    narrow: { x: 1.00, y: 0.10, s: 0.50 }
   };
 
   /* ------------------------------------------------------------------ state */
@@ -188,19 +189,40 @@
   var dv = 0, dvFrom = 0, dvTo = 0, dvT0 = 0, dvDur = 0, dvEase = easeOut;
   var mx = 0, my = 0, tmx = 0, tmy = 0;
   var colA = [0.78, 0.95, 0.23], colF = [0.93, 0.91, 0.87], colUntil = 0;
+  var lineW = 1, gain = 1, restA = 0.07, dustA = 0.55;
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
   var FOV = 20 * Math.PI / 180, D = 18;
 
   function parseColor(str) {
     if (!str) return null;
+    str = str.trim();
+    var hex = str.match(/^#([0-9a-f]{3}|[0-9a-f]{4}|[0-9a-f]{6}|[0-9a-f]{8})$/i);
+    if (hex) {
+      var h = hex[1];
+      if (h.length === 3 || h.length === 4) {
+        return [parseInt(h[0] + h[0], 16) / 255, parseInt(h[1] + h[1], 16) / 255, parseInt(h[2] + h[2], 16) / 255];
+      }
+      if (h.length === 6 || h.length === 8) {
+        return [parseInt(h.slice(0, 2), 16) / 255, parseInt(h.slice(2, 4), 16) / 255, parseInt(h.slice(4, 6), 16) / 255];
+      }
+    }
     var n = str.match(/-?[\d.]+/g); if (!n || n.length < 3) return null;
     n = n.map(Number);
-    return /^color\(/.test(str.trim()) ? [n[0], n[1], n[2]] : [n[0] / 255, n[1] / 255, n[2] / 255];
+    return /^color\(/.test(str) ? [n[0], n[1], n[2]] : [n[0] / 255, n[1] / 255, n[2] / 255];
+  }
+  function readNum(cs, prop, fallback) {
+    var v = parseFloat(cs.getPropertyValue(prop));
+    return isFinite(v) ? v : fallback;
   }
   function readColors() {
     var cs = getComputedStyle(document.documentElement);
-    var a = parseColor(cs.getPropertyValue('--acc')), f = parseColor(cs.getPropertyValue('--fg'));
+    var a = parseColor(cs.getPropertyValue('--gl-solid')) || parseColor(cs.getPropertyValue('--acc'));
+    var f = parseColor(cs.getPropertyValue('--gl-dust')) || parseColor(cs.getPropertyValue('--fg'));
     if (a) colA = a; if (f) colF = f;
+    lineW = readNum(cs, '--gl-line', 1);
+    gain = readNum(cs, '--gl-gain', 1);
+    restA = readNum(cs, '--gl-rest', 0.07);
+    dustA = readNum(cs, '--gl-dust-a', 0.55);
   }
   function compile(type, src) {
     var s = gl.createShader(type); gl.shaderSource(s, src); gl.compileShader(s);
@@ -327,7 +349,7 @@
     gl.uniformMatrix4fv(LP.uM, false, pm);
     gl.uniform1f(LP.uSz, 2.2 * dpr * (1 + dv * 1.6));
     gl.uniform3f(LP.uC, colF[0], colF[1], colF[2]);
-    gl.uniform1f(LP.uA, 0.55 * easeOut(el / 1.5) * (1 - dv * 0.35));
+    gl.uniform1f(LP.uA, dustA * easeOut(el / 1.5) * (1 - dv * 0.35));
     gl.bindBuffer(gl.ARRAY_BUFFER, pts.buf); gl.enableVertexAttribArray(LP.aP); gl.vertexAttribPointer(LP.aP, 3, gl.FLOAT, false, 12, 0);
     gl.drawArrays(gl.POINTS, 0, pts.count);
     gl.disableVertexAttribArray(LP.aP);
@@ -359,7 +381,7 @@
     var px = lerp(heroX, targetEdge * E.x, kk);
     var py = lerp(hero.y, E.y, kk);
     px = lerp(px, 0, Math.min(1, dv * 0.7)); py = lerp(py, 0, Math.min(1, dv * 0.7));   // dives aim at the centre of the screen
-    var alpha = Math.min(1, lerp(hero.a, E.a, kk) * (1 + dv * 0.6));
+    var alpha = Math.min(1, lerp(hero.a, restA, kk) * gain * (1 + dv * 0.6));
 
     py += Math.sin(tClock * 0.35 + ps * 2.0) * 0.012;
     var mouseAmt = (page === 'about' || page === 'work') ? 0.25 : 0.5;
@@ -372,7 +394,7 @@
     gl.uniform1f(LS.uA, alpha);
     gl.uniform1f(LS.uR, rev);
     gl.uniform1f(LS.uK, 0);
-    gl.uniform1f(LS.uW, 2.0 * dpr * (narrow ? 0.9 : 1) * (1 + dv * 2.2));
+    gl.uniform1f(LS.uW, 2.0 * dpr * (narrow ? 0.9 : 1) * (1 + dv * 2.2) * lineW);
     gl.uniform2f(LS.uZ, D - rad, Math.max(0.001, rad * 2));
     gl.uniformMatrix4fv(LS.uM, false, mul(P, M));
 
