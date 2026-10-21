@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>WooDesk — desktop manager for WooCommerce</title>
+<meta name="description" content="A desktop app for managing WooCommerce products, posts and media over the REST API, with an AI assistant for writing and bulk content work.">
+<meta name="theme-color" content="#0d0e11">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Noctis Architect">
+<meta property="og:title" content="WooDesk — desktop manager for WooCommerce">
+<meta property="og:description" content="A desktop app for managing WooCommerce products, posts and media over the REST API, with an AI assistant for writing and bulk content work.">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script>
+(function(){var d=document.documentElement;try{
+var l=localStorage.getItem('nx-lang'),t=localStorage.getItem('nx-theme');
+if(l!=='fa'&&l!=='en')l=(navigator.language||'').slice(0,2)==='fa'?'fa':'en';
+if(t!=='light'&&t!=='dark')t=matchMedia('(prefers-color-scheme: light)').matches?'light':'dark';
+d.lang=l;d.dir=l==='fa'?'rtl':'ltr';d.dataset.theme=t;
+var m=document.querySelector('meta[name=theme-color]');if(m)m.content=t==='light'?'#f5f4ef':'#0d0e11';
+if(sessionStorage.getItem('nx-nav')){d.classList.add('nx');sessionStorage.removeItem('nx-nav')}
+}catch(e){}
+d.classList.add('js');
+setTimeout(function(){if(!d.classList.contains('ready')){d.classList.add('ready','safe');d.classList.remove('nx')}},3500);
+})();
+</script>
+<link rel="stylesheet" href="../assets/css/style.css">
+<noscript><style>.js .r{opacity:1!important;translate:none!important}</style></noscript>
+</head>
+<body data-page="project" data-slug="woodesk">
+<a class="skip" href="#main" data-i="skip">Skip to content</a>
+<canvas id="gl" aria-hidden="true"></canvas>
+<div id="pg" aria-hidden="true"></div>
+<header class="hdr">
+ <div class="hin">
+  <a class="brand" href="../index.html" data-p="home" aria-label="Noctis Architect"><span class="mk"><svg viewBox="97 96 318 328" aria-hidden="true"><path fill="currentColor" fill-rule="evenodd" d="M248.0 416.6C247.2 415.9 231.9 406.2 214.0 395.2C196.1 384.1 180.7 374.5 179.9 373.8C178.4 372.6 178.8 371.3 183.7 361.2L189.1 349.8L193.5 354.8C205.3 367.9 224.1 377.8 243.2 381.1L250.0 382.2L250.0 400.1C250.0 409.9 249.9 418.0 249.7 418.0C249.6 418.0 248.8 417.4 248.0 416.6ZM262.0 400.0L262.0 382.1L266.8 381.5C285.9 378.8 305.5 368.7 318.4 355.0L323.1 350.0L326.5 357.4C328.3 361.5 330.8 366.6 331.9 368.9L334.0 372.9L298.0 395.4L262.0 417.9L262.0 400.0ZM240.5 369.4C218.6 364.8 197.6 347.7 188.1 327.0C186.3 322.8 184.2 320.2 181.1 317.9C177.4 315.3 161.6 304.3 119.9 275.4C113.1 270.7 113.0 270.3 113.0 245.0C113.0 209.4 116.9 190.9 128.9 170.6C133.8 162.3 143.2 150.2 145.5 149.3C146.7 148.9 181.0 172.2 181.0 173.5C181.0 173.7 178.6 174.6 175.8 175.5C132.2 189.6 118.9 242.9 151.0 275.0C167.9 292.0 193.7 297.9 214.3 289.6C218.1 288.0 221.3 287.0 221.4 287.2C221.8 287.8 245.1 341.1 250.4 353.7C253.2 360.4 255.7 366.0 256.0 366.0C256.3 366.0 257.5 363.4 258.8 360.2C266.9 339.6 290.8 287.5 292.0 287.7C292.8 287.8 296.2 288.8 299.5 290.1C330.9 301.7 368.4 281.1 377.0 247.4C384.7 217.3 367.8 186.7 337.3 176.0L330.1 173.4L347.7 160.7L365.3 147.9L368.7 151.2C377.4 159.5 387.7 176.8 392.6 191.3C397.1 204.6 398.0 213.0 398.0 243.4L397.9 271.5L362.2 296.3L326.5 321.2L322.0 330.3C307.9 359.5 273.0 376.2 240.5 369.4ZM140.0 349.2L113.5 332.5L113.3 312.0C113.2 300.7 113.5 290.1 113.8 288.4L114.5 285.4L145.0 306.5C174.6 327.1 175.6 327.8 178.7 333.5L181.8 339.4L175.2 352.7C171.5 360.0 168.1 366.0 167.5 365.9C167.0 365.9 154.6 358.4 140.0 349.2ZM337.2 353.5C327.2 333.4 326.5 334.7 367.3 306.4L398.0 285.1L397.8 309.2L397.5 333.3L384.4 341.4C377.2 345.9 365.5 353.2 358.3 357.8C351.1 362.3 344.9 366.0 344.4 366.0C343.9 366.0 340.7 360.4 337.2 353.5ZM254.7 335.4C253.9 333.8 249.1 323.0 244.1 311.4L234.9 290.3L240.3 279.9C250.9 259.6 261.0 259.6 271.7 279.8L277.2 290.1L271.4 303.3C268.2 310.6 263.5 321.4 260.9 327.4L256.2 338.2L254.7 335.4ZM181.1 280.4C162.9 275.5 148.0 258.7 145.0 239.8C141.2 215.1 158.8 190.3 183.8 185.1C195.2 182.7 194.7 182.5 217.8 199.2C238.7 214.3 239.0 214.6 240.4 219.5C251.1 255.5 217.4 290.2 181.1 280.4ZM307.6 280.9C294.0 277.7 280.6 266.7 274.3 253.4C269.6 243.6 268.7 225.2 272.5 217.5C275.6 211.2 313.5 184.0 319.1 184.0C334.4 184.0 351.3 193.5 360.0 207.1C383.1 243.0 349.3 290.7 307.6 280.9ZM205.5 258.6C227.3 248.4 227.3 217.6 205.5 207.4C187.2 198.8 165.0 212.8 165.0 233.0C165.0 253.2 187.1 267.2 205.5 258.6ZM330.5 258.6C357.9 245.9 348.7 205.0 318.5 205.0C288.4 205.0 279.2 245.0 306.2 258.4C313.3 261.9 323.3 262.0 330.5 258.6ZM242.0 203.1C207.9 178.4 109.2 107.5 106.3 105.6C104.5 104.4 103.0 103.1 103.0 102.7C103.0 102.2 116.4 102.0 132.8 102.2C175.5 102.8 177.5 103.6 205.5 130.9C214.3 139.5 229.3 153.9 238.8 162.9L256.1 179.3L264.3 171.4C334.5 103.9 331.9 105.9 351.7 103.0C359.6 101.9 409.0 101.6 409.0 102.8C408.9 103.2 405.0 106.2 400.2 109.6C390.8 116.2 325.6 163.0 283.0 193.8C268.4 204.3 256.3 213.0 256.0 212.9C255.7 212.9 249.4 208.5 242.0 203.1ZM111.2 173.7C103.6 164.6 104.4 148.3 112.7 139.0C119.8 131.1 121.7 130.9 129.5 136.6C133.1 139.2 136.0 141.5 136.0 141.7C136.0 141.8 132.9 145.8 129.2 150.5C125.4 155.1 120.3 162.6 117.9 167.0C113.3 175.4 112.9 175.8 111.2 173.7ZM396.6 171.3C393.8 165.4 384.6 151.8 379.5 146.2L374.9 141.1L381.5 136.5C389.2 131.0 390.9 131.0 397.4 137.1C406.4 145.3 408.7 158.1 403.4 168.8C399.9 175.7 398.9 176.1 396.6 171.3ZM220.1 129.6C206.5 116.0 204.1 113.2 205.7 112.5C237.2 99.7 275.8 99.2 302.9 111.2L308.1 113.5L291.8 129.7L275.5 146.0L270.0 143.8C262.4 140.8 249.7 140.8 242.0 143.8C239.0 145.0 236.5 146.0 236.5 146.0C236.5 146.0 229.1 138.6 220.1 129.6Z"/></svg></span><span class="wm"><b>Noctis Architect</b><small data-i="brand_sub">Web developer</small></span></a>
+  <nav class="nv" aria-label="Primary"><a href="../index.html" data-p="home" data-i="n_home">Home</a><a href="../work.html" data-p="work" data-i="n_work" aria-current="page">Work</a><a href="../about.html" data-p="about" data-i="n_about">About</a><a href="../contact.html" data-p="contact" data-i="n_contact">Contact</a></nav>
+  <div class="ctl">
+    <button id="lg" type="button" aria-label="Switch language to Persian" data-i-aria="aria_lang"><span>FA</span></button>
+    <button id="th" type="button" aria-label="Toggle light and dark theme" data-i-aria="aria_theme"><svg class="su" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg><svg class="mo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 019.5 4a8.5 8.5 0 1010.5 10.5z"/></svg></button>
+  </div>
+ </div>
+</header>
+<nav class="mnav" aria-label="Primary"><a href="../index.html" data-p="home" data-i="n_home">Home</a><a href="../work.html" data-p="work" data-i="n_work" aria-current="page">Work</a><a href="../about.html" data-p="about" data-i="n_about">About</a><a href="../contact.html" data-p="contact" data-i="n_contact">Contact</a></nav>
+<main id="main" tabindex="-1">
+<section class="intro" data-anchor>
+  <div class="ib">
+    <a class="back r" href="../work.html" data-p="work"><i>←</i><span data-i="p_back">All projects</span></a>
+    <h1 class="hd">WooDesk</h1>
+    <p class="lead r mu" data-i="pd8">A desktop app for managing WooCommerce products, posts and media over the REST API, with an AI assistant for writing and bulk content work.</p>
+    <div class="ptags r"><span>Python</span><span>PySide6</span><span>WooCommerce</span><span>AI</span></div>
+    <div class="proj-links r"><a class="btn ghost" href="https://github.com/Noctis-Architect/woodesk" target="_blank" rel="noopener"><span data-i="p_source">Source</span><i>↗</i></a></div>
+
+  </div>
+</section>
+<section class="proj-body" data-anchor>
+  <div class="ib" data-i="pb_woodesk">
+    <h2>Desktop Operations Hub for WooCommerce</h2>
+    <p>Managing large WooCommerce catalogs through slow browser tabs is tedious and prone to accidental tab closures. WooDesk is a native, high-performance desktop application that talks directly to the WooCommerce REST API, bringing desktop responsiveness and AI-assisted copywriting to store administrators.</p>
+    <h2>Engineering Features</h2>
+    <ul>
+      <li><strong>Snappy PySide6 / Qt Architecture:</strong> Built using Python and Qt bindings, providing smooth data grids, keyboard shortcuts, background thread workers, and customizable themes.</li>
+      <li><strong>Batch Product & Inventory Updates:</strong> Executes catalog-wide price adjustments, stock tallying, and category reorganizations using asynchronous API batch requests without browser timeouts.</li>
+      <li><strong>Integrated AI Copywriter:</strong> Connects to LLM endpoints to generate engaging Persian or English product descriptions, feature bullet points, and SEO metadata from simple rough notes.</li>
+      <li><strong>Bulk Media Optimization:</strong> Drag-and-drop product gallery staging with automatic image compression, WebP encoding, and direct REST API media upload.</li>
+    </ul>
+    <h2>Tech Stack</h2>
+    <p>Python 3.11, PySide6 (Qt for Python), Requests, Threading, WooCommerce REST API v3.</p>
+  </div>
+</section>
+</main>
+<footer class="ft">
+ <div class="ftin">
+  <div class="fbrand">
+   <b>Noctis Architect</b>
+   <p data-i="ft_bio">Full-stack software and systems developer. WordPress, WooCommerce, Telegram bots, APIs and modern web platforms.</p>
+  </div>
+  <div>
+   <h4 data-i="ft_nav">Navigate</h4>
+   <a href="../index.html" data-p="home" data-i="n_home">Home</a>
+   <a href="../work.html" data-p="work" data-i="n_work">Work</a>
+   <a href="../about.html" data-p="about" data-i="n_about">About</a>
+   <a href="../contact.html" data-p="contact" data-i="n_contact">Contact</a>
+  </div>
+  <div>
+   <h4 data-i="ft_else">Elsewhere</h4>
+   <a href="https://github.com/Noctis-Architect" target="_blank" rel="noopener" data-i="gh">GitHub</a>
+   <a href="https://t.me/Noctis_Architect" target="_blank" rel="noopener" data-i="tg">Telegram channel</a>
+   <a href="https://instagram.com/techarch_offical" target="_blank" rel="noopener" data-i="ig">Instagram</a>
+  </div>
+ </div>
+ <div class="ftbar">
+  <span>© 2026 Noctis Architect · nocarch.com</span>
+ </div>
+</footer>
+<div id="cv" aria-hidden="true"></div>
+<script src="../assets/js/i18n.js"></script>
+<script src="../assets/js/scene.js"></script>
+<script src="../assets/js/app.js"></script>
+</body>
+</html>
