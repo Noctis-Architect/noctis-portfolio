@@ -449,6 +449,73 @@
     $$('.r, .hd').forEach(function (el) { if (io) io.observe(el); else el.classList.add('in'); });
   }
 
+  /* ------------------------------------------------------------ first-load intro */
+  var intro = $('#intro');
+  var introOn = !!intro && H.classList.contains('intro-run');
+  var introCount = intro && $('.iv-count', intro);
+  var introRaf = 0;
+  if (intro) {
+    var glyph = $('.iv-glyph', intro);
+    var brandMark = $('.brand svg');
+    if (glyph && brandMark) glyph.appendChild(brandMark.cloneNode(true));
+
+    // each glyph of the wordmark gets its own mask so it can rise in on its own beat
+    var word = $('.iv-word', intro);
+    if (word) {
+      var text = word.textContent.replace(/\s+/g, ' ').trim();
+      word.textContent = '';
+      Array.prototype.forEach.call(text, function (ch, i) {
+        if (ch === ' ') { word.appendChild(D.createTextNode(' ')); return; }
+        var box = D.createElement('span'), inner = D.createElement('i');
+        box.className = 'iv-ch';
+        box.style.setProperty('--n', i);
+        inner.textContent = ch;
+        box.appendChild(inner);
+        word.appendChild(box);
+      });
+      word.classList.add('split');
+    }
+  }
+
+  function introCountUp() {
+    if (!introCount || !introOn) return;
+    var t0 = 0, dur = 1100;
+    var tick = function (now) {
+      if (!t0) t0 = now;
+      var p = Math.min(1, (now - t0) / dur);
+      var eased = 1 - Math.pow(1 - p, 3);
+      introCount.textContent = String(Math.round(eased * 100)).padStart(3, '0');
+      if (p < 1 && introOn) introRaf = requestAnimationFrame(tick);
+    };
+    introRaf = requestAnimationFrame(tick);
+  }
+
+  function introExit() {
+    if (!introOn) return;
+    introOn = false;
+    cancelAnimationFrame(introRaf);
+    if (introCount) introCount.textContent = '100';
+
+    // let the page and the wireframe develop behind the still-opaque sheet,
+    // then open the lens so the wipe lands on a finished frame
+    Scene.start();
+    startReveal();
+    [$('.hdr'), $('.mnav')].filter(Boolean).forEach(function (el) {
+      var y = el.classList.contains('mnav') ? 14 : -10;
+      el.animate(
+        [{ opacity: 0, transform: 'translateY(' + y + 'px)' }, { opacity: 1, transform: 'none' }],
+        { duration: 800, delay: 60, easing: EASE_OUT, fill: 'backwards' }
+      );
+    });
+
+    setTimeout(function () { H.classList.add('intro-out'); }, 240);
+
+    setTimeout(function () {
+      H.classList.remove('intro-run', 'intro-in', 'intro-out');
+      if (intro && intro.parentNode) intro.remove();
+    }, 240 + 1060);
+  }
+
   /* ------------------------------------------------------------ header + progress */
   var hdr = $('.hdr'), pg = $('#pg'), ticking = false;
   function onScroll() {
@@ -634,13 +701,25 @@
     bind(); onScroll();
     initNavPill(true);
 
-    var fonts = Promise.race([ensureFonts(lang), sleep(1300)]);
+    var fonts = Promise.race([ensureFonts(lang), sleep(introOn ? 620 : 1300)]);
     if (nx) {
       measure();
       Scene.start();
       arrive();
       fonts.then(function () { measure(); initNavPill(true); });
+    } else if (introOn) {
+      measure();
+      initNavPill(true);
+      fonts.then(function () {
+        measure();
+        initNavPill(true);
+        if (!introOn) { Scene.start(); startReveal(); return; }   // fallback already removed the sheet
+        H.classList.add('intro-in');
+        introCountUp();
+        setTimeout(introExit, 1280);
+      });
     } else {
+      if (intro && intro.parentNode) intro.remove();
       fonts.then(function () {
         measure(); Scene.start();
         initNavPill(true);
