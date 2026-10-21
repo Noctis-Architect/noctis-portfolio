@@ -12,16 +12,35 @@
 <meta property="og:description" content="A ready-made template that turns any website into an Android app by changing a few settings.">
 <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
 <script>
-(function(){var d=document.documentElement;try{
-var l=localStorage.getItem('nx-lang'),t=localStorage.getItem('nx-theme');
-if(l!=='fa'&&l!=='en')l=(navigator.language||'').slice(0,2)==='fa'?'fa':'en';
-if(t!=='light'&&t!=='dark')t=matchMedia('(prefers-color-scheme: light)').matches?'light':'dark';
-d.lang=l;d.dir=l==='fa'?'rtl':'ltr';d.dataset.theme=t;
-var m=document.querySelector('meta[name=theme-color]');if(m)m.content=t==='light'?'#f5f4ef':'#0d0e11';
-if(sessionStorage.getItem('nx-nav')){d.classList.add('nx');sessionStorage.removeItem('nx-nav')}
-}catch(e){}
-d.classList.add('js');
-setTimeout(function(){if(!d.classList.contains('ready')){d.classList.add('ready','safe');d.classList.remove('nx')}},3500);
+(function () {
+  var d = document.documentElement;
+  try {
+    var lang = localStorage.getItem('nx-lang');
+    if (lang !== 'fa' && lang !== 'en') {
+      var primary = (navigator.languages && navigator.languages[0]) || navigator.language || '';
+      lang = /^fa([-_]|$)/i.test(primary) ? 'fa' : 'en';
+    }
+    var theme = localStorage.getItem('nx-theme');
+    if (theme !== 'light' && theme !== 'dark') {
+      theme = matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+    }
+    d.lang = lang;
+    d.dir = lang === 'fa' ? 'rtl' : 'ltr';
+    d.dataset.theme = theme;
+    var meta = document.querySelector('meta[name=theme-color]');
+    if (meta) meta.content = theme === 'light' ? '#f5f4ef' : '#0d0e11';
+    if (sessionStorage.getItem('nx-nav')) {
+      d.classList.add('nx');
+      sessionStorage.removeItem('nx-nav');
+    }
+  } catch (e) {}
+  d.classList.add('js');
+  setTimeout(function () {
+    if (!d.classList.contains('ready')) {
+      d.classList.add('ready', 'safe');
+      d.classList.remove('nx');
+    }
+  }, 3500);
 })();
 </script>
 <link rel="stylesheet" href="../assets/css/style.css">

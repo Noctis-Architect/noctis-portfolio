@@ -190,10 +190,18 @@
      so the new theme is already in place underneath — nothing ever goes blank.
      the content settles back from a soft zoom/blur and a thin accent ring rides the edge. */
   var theming = false;
-  function applyTheme(next) {
-    theme = next; H.setAttribute('data-theme', next); store('nx-theme', next);
+  var mqLight = window.matchMedia('(prefers-color-scheme: light)');
+  function systemTheme() { return mqLight.matches ? 'light' : 'dark'; }
+  function paintTheme(next) {
+    theme = next; H.setAttribute('data-theme', next);
     var m = $('meta[name="theme-color"]'); if (m) m.setAttribute('content', next === 'light' ? '#f5f4ef' : '#0d0e11');
     Scene.theme();
+  }
+  function applyTheme(next) { paintTheme(next); store('nx-theme', next); }
+  /* follow the OS until the reader picks a theme themselves */
+  function followSystemTheme() {
+    if (store('nx-theme') === 'light' || store('nx-theme') === 'dark') return;
+    if (systemTheme() !== theme) paintTheme(systemTheme());
   }
   function onTheme() {
     if (theming) return;
@@ -582,6 +590,8 @@
     $('#lg').addEventListener('pointerenter', function () { ensureFonts(lang === 'fa' ? 'en' : 'fa'); });
     $('#th').addEventListener('click', onTheme);
     window.addEventListener('scroll', onScroll, { passive: true });
+    if (mqLight.addEventListener) mqLight.addEventListener('change', followSystemTheme);
+    else if (mqLight.addListener) mqLight.addListener(followSystemTheme);
     D.addEventListener('pointermove', onPointerMove, { passive: true });
     D.addEventListener('pointerout', onPointerOut);
 
@@ -605,6 +615,14 @@
     });
     window.addEventListener('pageshow', function (e) { if (e.persisted) resetPortal(); });    // back button / bfcache
     if (window.ResizeObserver) new ResizeObserver(measure).observe(B);
+    var narrow = window.matchMedia('(max-width: 720px)'), wasNarrow = narrow.matches;
+    var onBreakpoint = function () {
+      if (narrow.matches === wasNarrow) return;
+      wasNarrow = narrow.matches;
+      initNavPill(true);                        // build the pill in the nav that just became visible
+    };
+    if (narrow.addEventListener) narrow.addEventListener('change', onBreakpoint);
+    else if (narrow.addListener) narrow.addListener(onBreakpoint);
     initFilter();
   }
 
@@ -617,7 +635,6 @@
     initNavPill(true);
 
     var fonts = Promise.race([ensureFonts(lang), sleep(1300)]);
-
     if (nx) {
       measure();
       Scene.start();

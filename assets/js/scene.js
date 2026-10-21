@@ -280,6 +280,11 @@
   /* ---------------------------------------------------------------- poses */
   function heroPose() {
     if (narrow) {
+      /* Dense pages have no spare space under the intro. Keep their solid out of
+         the way at rest and let it fade in along its edge once the page scrolls. */
+      if (page === 'work' || page === 'project') {
+        return { x: 0, y: 0.1, s: 0.5, a: 0 };
+      }
       var zt = zone ? zone.top : Hh * 0.6, zb = zone ? zone.bot : Hh * 0.88, zh = Math.max(130, zb - zt);
       var Upx = Math.min(Hh, 0.9 * W), px = Math.min(zh * 0.92, W * 0.62);
       var sNarrow = (page === 'about') ? px / Upx * 0.82 : px / Upx;

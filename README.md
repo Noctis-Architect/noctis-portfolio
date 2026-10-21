@@ -30,10 +30,25 @@ markup **and** the same key in both languages inside `assets/js/i18n.js`.
 Project pages keep an empty `.proj-body` section on purpose — that is where the
 long-form write-up goes.
 
+## Preferences
+
+On a first visit the site follows the browser: the primary language (`fa*` → Persian,
+everything else → English) and the OS colour scheme (`prefers-color-scheme`). Both are
+applied from an inline script in `<head>`, before the first paint, so there is no flash
+of the wrong language or theme.
+
+Choosing a language or theme stores it in `localStorage` and that choice wins on later
+visits. Until a theme is chosen manually, live OS theme changes are followed too.
+
 ## Publishing
 
-Upload the folder as-is to any static host (cPanel, Netlify, GitHub Pages, ...).
-Fonts come from Google Fonts: Inter, Instrument Serif, JetBrains Mono, Vazirmatn.
+Pushes to `main` publish automatically to GitHub Pages (branch source, root folder):
+
+**https://noctis-architect.github.io/noctis-portfolio/**
+
+The `.nojekyll` file disables Jekyll processing. The folder can also be uploaded as-is to
+any other static host (cPanel, Netlify, Cloudflare Pages, ...). Fonts are self-hosted;
+no external services are required at runtime.
 
 ## The 3D scene
 
