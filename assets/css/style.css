@@ -32,10 +32,10 @@
   transition: --bg .9s ease, --fg .9s ease, --mu .9s ease, --ln .9s ease, --acc .9s ease, --oa .9s ease, --gl-solid .9s ease, --gl-dust .9s ease;
 }
 :root[data-theme="light"] {
-  --bg: #f5f4ef; --fg: #101114; --mu: #575a60; --ln: #d6d4cc; --acc: #3a9400; --oa: #ffffff;
-  /* the wireframe needs real contrast against cream: deeper green, heavier lines, stronger resting alpha */
-  --gl-solid: #1f7f00; --gl-dust: #55534b;
-  --gl-line: 1.45; --gl-gain: 1.2; --gl-rest: .16; --gl-dust-a: .3;
+  --bg: #f2ede3; --fg: #1b1611; --mu: #665d52; --ln: #ded4c4; --acc: #9e4527; --oa: #fff8f0;
+  /* warm copper wireframe on paper: present, but softer than the dark theme's lime */
+  --gl-solid: #91452c; --gl-dust: #6f665a;
+  --gl-line: 1.28; --gl-gain: 1.02; --gl-rest: .14; --gl-dust-a: .24;
   color-scheme: light;
 }
 /* ---------- theme change: soft circular wipe from the toggle ---------- */
@@ -314,6 +314,9 @@ body[data-page="project"] .intro { min-height: 0; padding-bottom: 0; }
 .row:hover::before { transform: scaleX(1); }
 .row:hover { color: var(--oa); padding-inline: 24px; }
 .row:hover small, .row:hover .ix, .row:hover .tg { color: color-mix(in srgb, var(--oa) 68%, transparent); }
+:root[data-theme="light"] .row:hover small,
+:root[data-theme="light"] .row:hover .ix,
+:root[data-theme="light"] .row:hover .tg { color: color-mix(in srgb, var(--oa) 88%, transparent); }
 .row .ix { color: var(--mu); transition: color .4s; }
 .nm, .nm small { min-width: 0; overflow-wrap: anywhere; }
 .nm b { display: block; font: 400 clamp(26px, 3.4vw, 42px)/1.15 var(--f-serif); }

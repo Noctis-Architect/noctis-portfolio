@@ -166,7 +166,7 @@
      x,y: -1…1 of the viewport (y up) · s: diameter as a fraction of U = min(height, 0.9·width) · a: opacity
      side: which screen edge the solid parks against once the page is scrolled (mirrored in RTL)   */
   var PAGES = {
-    home:    { geo: geoIcosphere,           side:  1, spin: [0.17, 0.10], hero: { x: 0.58, y: 0.02, s: 0.46, a: 0.95 } },
+    home:    { geo: geoIcosphere,           side:  1, spin: [0.17, 0.10], hero: { x: 0.50, y: 0.03, s: 0.46, a: 0.95 } },
     work:    { geo: function () { return geoKnot(2, 3, 0.34, 130, 9); }, side: 1, spin: [-0.14, 0.09], hero: { x: 0.62, y: 0.34, s: 0.28, a: 0.60 } },
     about:   { geo: function () { return geoCube(5); },  side:  1, spin: [0.12, 0.07], hero: { x: 0.52, y: 0.16, s: 0.34, a: 0.92 } },
     contact: { geo: geoOctahedron,          side: -1, spin: [-0.12, 0.08], hero: { x: 0.60, y: 0.22, s: 0.38, a: 0.95 } },

@@ -194,7 +194,7 @@
   function systemTheme() { return mqLight.matches ? 'light' : 'dark'; }
   function paintTheme(next) {
     theme = next; H.setAttribute('data-theme', next);
-    var m = $('meta[name="theme-color"]'); if (m) m.setAttribute('content', next === 'light' ? '#f5f4ef' : '#0d0e11');
+    var m = $('meta[name="theme-color"]'); if (m) m.setAttribute('content', next === 'light' ? '#f2ede3' : '#0d0e11');
     Scene.theme();
   }
   function applyTheme(next) { paintTheme(next); store('nx-theme', next); }
@@ -214,7 +214,7 @@
 
     var ov = D.createElement('div');
     ov.className = 'tsw';
-    ov.style.background = theme === 'light' ? '#f5f4ef' : '#0d0e11';
+    ov.style.background = theme === 'light' ? '#f2ede3' : '#0d0e11';
     ov.style.setProperty('--tx', x + 'px');
     ov.style.setProperty('--ty', y + 'px');
     ov.style.setProperty('--tw', '0px');
