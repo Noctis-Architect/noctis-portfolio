@@ -15,15 +15,16 @@
     { id: 1, slug: 'wp-hub', name: 'WP-Hub', kind: 'client', tags: ['WordPress', 'Security', 'Lighthouse'], links: [{ type: 'visit', url: 'https://wphub.org' }] },
     { id: 2, slug: 'ashrafi-mobl', name: 'Ashrafi Mobl', kind: 'client', tags: ['WooCommerce', 'PHP', 'Memcached', 'Flutter'], links: [{ type: 'visit', url: 'https://moblashrafi.com' }] },
     { id: 3, slug: 'blush-blossom', name: 'Blush Blossom', kind: 'client', tags: ['Elementor', 'WordPress'], links: [{ type: 'visit', url: 'https://blushblossom.co.uk' }] },
-    { id: 4, slug: 'price-updater', name: 'Dollar Price Updater PRO', kind: 'oss', tags: ['PHP', 'WooCommerce', 'Telegram'], links: [{ type: 'source', url: 'https://github.com/Noctis-Architect/wp-price-updater' }] },
-    { id: 5, slug: 'group-doctor', name: 'Group Doctor', kind: 'oss', tags: ['Python', 'LLM', 'Telegram'], links: [{ type: 'source', url: 'https://github.com/Noctis-Architect/gdoc' }, { type: 'visit', url: 'https://t.me/g_docbot' }] },
-    { id: 6, slug: 'mindgrid', name: 'MindGrid', kind: 'oss', tags: ['Flutter', 'Dart'], links: [{ type: 'source', url: 'https://github.com/Noctis-Architect/mindgrid' }] },
-    { id: 7, slug: 'webapp-maker', name: 'webapp-maker', kind: 'oss', tags: ['HTML', 'Android'], links: [{ type: 'source', url: 'https://github.com/Noctis-Architect/webapp-maker' }] },
-    { id: 8, slug: 'wp-guard', name: 'WP Guard', kind: 'oss', tags: ['WordPress', 'Pentest'], links: [{ type: 'source', url: 'https://github.com/Noctis-Architect/wp-guard' }] },
-    { id: 9, slug: 'woodesk', name: 'WooDesk', kind: 'oss', tags: ['Python', 'PySide6', 'WooCommerce', 'AI'], links: [{ type: 'source', url: 'https://github.com/Noctis-Architect/woodesk' }] },
-    { id: 10, slug: 'price-api', name: 'Price API', kind: 'oss', tags: ['Python', 'FastAPI', 'Caching'], links: [{ type: 'source', url: 'https://github.com/Noctis-Architect/price-api' }] },
-    { id: 11, slug: 'press-agent', name: 'PressAgent', kind: 'oss', tags: ['PHP', 'TypeScript', 'MCP'], links: [{ type: 'source', url: 'https://github.com/Noctis-Architect/press-agent' }] },
-    { id: 12, slug: 'puppy', name: 'Message Guard', kind: 'oss', tags: ['Python', 'Telethon'], links: [{ type: 'source', url: 'https://github.com/Noctis-Architect/puppy' }] }
+    { id: 4, slug: 'viratandis', name: 'Vira Tandis', kind: 'client', tags: ['WooCommerce', 'WordPress', 'Elementor', 'RTL'], links: [{ type: 'visit', url: 'https://viratandis.ir' }] },
+    { id: 5, slug: 'price-updater', name: 'Dollar Price Updater PRO', kind: 'oss', tags: ['PHP', 'WooCommerce', 'Telegram'], links: [{ type: 'source', url: 'https://github.com/Noctis-Architect/wp-price-updater' }] },
+    { id: 6, slug: 'group-doctor', name: 'Group Doctor', kind: 'oss', tags: ['Python', 'LLM', 'Telegram'], links: [{ type: 'source', url: 'https://github.com/Noctis-Architect/gdoc' }, { type: 'visit', url: 'https://t.me/g_docbot' }] },
+    { id: 7, slug: 'mindgrid', name: 'MindGrid', kind: 'oss', tags: ['Flutter', 'Dart'], links: [{ type: 'source', url: 'https://github.com/Noctis-Architect/mindgrid' }] },
+    { id: 8, slug: 'webapp-maker', name: 'webapp-maker', kind: 'oss', tags: ['HTML', 'Android'], links: [{ type: 'source', url: 'https://github.com/Noctis-Architect/webapp-maker' }] },
+    { id: 9, slug: 'wp-guard', name: 'WP Guard', kind: 'oss', tags: ['WordPress', 'Pentest'], links: [{ type: 'source', url: 'https://github.com/Noctis-Architect/wp-guard' }] },
+    { id: 10, slug: 'woodesk', name: 'WooDesk', kind: 'oss', tags: ['Python', 'PySide6', 'WooCommerce', 'AI'], links: [{ type: 'source', url: 'https://github.com/Noctis-Architect/woodesk' }] },
+    { id: 11, slug: 'price-api', name: 'Price API', kind: 'oss', tags: ['Python', 'FastAPI', 'Caching'], links: [{ type: 'source', url: 'https://github.com/Noctis-Architect/price-api' }] },
+    { id: 12, slug: 'press-agent', name: 'PressAgent', kind: 'oss', tags: ['PHP', 'TypeScript', 'MCP'], links: [{ type: 'source', url: 'https://github.com/Noctis-Architect/press-agent' }] },
+    { id: 13, slug: 'puppy', name: 'Message Guard', kind: 'oss', tags: ['Python', 'Telethon'], links: [{ type: 'source', url: 'https://github.com/Noctis-Architect/puppy' }] }
   ];
 
   var COMMANDS = ['help', 'whoami', 'about', 'skills', 'projects', 'project', 'open', 'contact', 'cd', 'pwd', 'ls', 'cat', 'tree', 'env', 'which', 'theme', 'lang', 'date', 'uptime', 'ping', 'echo', 'history', 'clear', 'exit', 'neofetch', 'banner', 'matrix', 'sudo', 'coffee', 'rm'];

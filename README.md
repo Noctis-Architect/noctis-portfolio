@@ -4,7 +4,7 @@ Static, bilingual (EN/FA) portfolio. No build step, no dependencies.
 
 ```
 index.html  work.html  about.html  contact.html
-projects/            one page per project (12)
+projects/            one page per project (13)
 assets/
   css/style.css      all styles (colours at the top, in :root)
   js/i18n.js         every string, in both languages
