@@ -275,7 +275,7 @@
     return [
       'Telegram: https://t.me/Noctis_Architect',
       'GitHub: https://github.com/Noctis-Architect',
-      'Instagram: https://instagram.com/techarch_offical',
+      'Instagram: https://instagram.com/nocarch',
       'Website: https://nocarch.com', '', site('cs')
     ].join('\n');
   }
@@ -549,7 +549,7 @@
     block('', kv([
       [site('tg'), extLink('https://t.me/Noctis_Architect', '@Noctis_Architect')],
       [site('gh'), extLink('https://github.com/Noctis-Architect', 'Noctis-Architect')],
-      [site('ig'), extLink('https://instagram.com/techarch_offical', '@techarch_offical')],
+      [site('ig'), extLink('https://instagram.com/nocarch', '@nocarch')],
       ['Web', extLink('https://nocarch.com', 'nocarch.com')]
     ]));
     line(esc(site('cs')), 'cs-dim', 'auto');

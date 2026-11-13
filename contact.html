@@ -28,7 +28,7 @@
     d.dir = lang === 'fa' ? 'rtl' : 'ltr';
     d.dataset.theme = theme;
     var meta = document.querySelector('meta[name=theme-color]');
-    if (meta) meta.content = theme === 'light' ? '#f2ede3' : '#0d0e11';
+    if (meta) meta.content = theme === 'light' ? '#f4f4f1' : '#0d0e11';
     if (sessionStorage.getItem('nx-nav')) {
       d.classList.add('nx');
       sessionStorage.removeItem('nx-nav');
@@ -90,18 +90,30 @@
 <main id="main" tabindex="-1">
 <section class="intro contact-top" data-anchor>
   <div class="ib">
-    <h2 class="hd" data-i="ct">Contact</h2>
-    <p class="lead r mu" data-i="cs">Telegram is the fastest way to reach me. I usually reply the same day, in Persian or English.</p>
+    <h2 class="hd" data-i="ct">Bring me the messy part.</h2>
+    <p class="lead r mu" data-i="cs">A store that’s slow, a bot that keeps getting outsmarted, a plugin nobody wants to touch. Telegram is fastest — usually same day, Persian or English.</p>
     <div class="ccards">
-      <a class="ccard r" style="--i:0" href="https://t.me/Noctis_Architect" target="_blank" rel="noopener"><span class="ci" data-i="tg">Telegram</span><b>@Noctis_Architect</b><small>t.me/Noctis_Architect</small></a>
-      <a class="ccard r" style="--i:1" href="https://github.com/Noctis-Architect" target="_blank" rel="noopener"><span class="ci" data-i="gh">GitHub</span><b>Noctis-Architect</b><small>github.com/Noctis-Architect</small></a>
-      <a class="ccard r" style="--i:2" href="https://instagram.com/techarch_offical" target="_blank" rel="noopener"><span class="ci" data-i="ig">Instagram</span><b>@techarch_offical</b><small>instagram.com/techarch_offical</small></a>
+      <a class="ccard r" style="--i:0" href="https://t.me/Noctis_Architect" target="_blank" rel="noopener"><span class="ci" data-i="tg">Telegram</span><b>@Noctis_Architect</b><small>t.me/Noctis_Architect</small><i class="cc-arrow" aria-hidden="true">↗</i></a>
+      <a class="ccard r" style="--i:1" href="https://github.com/Noctis-Architect" target="_blank" rel="noopener"><span class="ci" data-i="gh">GitHub</span><b>Noctis-Architect</b><small>github.com/Noctis-Architect</small><i class="cc-arrow" aria-hidden="true">↗</i></a>
+      <a class="ccard r" style="--i:2" href="https://instagram.com/nocarch" target="_blank" rel="noopener"><span class="ci" data-i="ig">Instagram</span><b>@nocarch</b><small>instagram.com/nocarch</small><i class="cc-arrow" aria-hidden="true">↗</i></a>
     </div>
   </div>
 </section>
-<section class="sec" data-anchor>
-  <h2 class="hd" data-i="cwk">If you’re writing about a project</h2>
-  <p class="lead r mu" data-i="cw">A few lines is enough: what you need, roughly when, and a link to the current site if there is one.</p>
+<section class="sec contact-send" data-anchor>
+  <div class="send-head r">
+    <h2 class="hd" data-i="cwk">Three lines are enough.</h2>
+    <p class="lead mu" data-i="cw">No brief document needed. Tell me what you need, roughly when, and where it lives now.</p>
+
+  </div>
+  <ol class="send">
+    <li class="r" style="--i:0"><span class="send-n" aria-hidden="true">01</span><div><b data-i="send1t">What you need</b><p data-i="send1d">A store, a fix, a bot, or something that doesn’t have a name yet.</p></div></li>
+    <li class="r" style="--i:1"><span class="send-n" aria-hidden="true">02</span><div><b data-i="send2t">When</b><p data-i="send2d">A date, a rough month, or “no rush”. All three are useful.</p></div></li>
+    <li class="r" style="--i:2"><span class="send-n" aria-hidden="true">03</span><div><b data-i="send3t">Where it lives</b><p data-i="send3d">A link to the current site or repository, if there is one.</p></div></li>
+  </ol>
+  <div class="send-act r">
+    <button class="btn" type="button" data-copy-brief><span data-i="brief_copy">Copy the three lines</span><i aria-hidden="true">⧉</i></button>
+    <a class="btn ghost" href="https://t.me/Noctis_Architect" target="_blank" rel="noopener"><span data-i="brief_tg">Paste it in Telegram</span><i aria-hidden="true">↗</i></a>
+  </div>
 </section>
 </main>
 <footer class="ft">
@@ -121,7 +133,7 @@
    <h4 data-i="ft_else">Elsewhere</h4>
    <a href="https://github.com/Noctis-Architect" target="_blank" rel="noopener" data-i="gh">GitHub</a>
    <a href="https://t.me/Noctis_Architect" target="_blank" rel="noopener" data-i="tg">Telegram channel</a>
-   <a href="https://instagram.com/techarch_offical" target="_blank" rel="noopener" data-i="ig">Instagram</a>
+   <a href="https://instagram.com/nocarch" target="_blank" rel="noopener" data-i="ig">Instagram</a>
    <a href="assets/resume/Sajjad-Noctis-Resume.pdf" download data-i="cv_link">Résumé (PDF)</a>
   </div>
  </div>
@@ -134,5 +146,6 @@
 <script src="assets/js/scene.js"></script>
 <script src="assets/js/app.js"></script>
 <script src="assets/js/console.js"></script>
+<script src="assets/js/ui.js"></script>
 </body>
 </html>

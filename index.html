@@ -4,12 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Noctis Architect — Home</title>
-<meta name="description" content="WordPress platforms, Telegram automation, LLM pipelines and security tooling — designed as layered systems and engineered to keep working.">
+<meta name="description" content="Noctis — independent developer. WordPress sites, WooCommerce stores, custom plugins and Telegram bots. Built and maintained in Persian and English.">
 <meta name="theme-color" content="#0d0e11">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Noctis Architect">
 <meta property="og:title" content="Noctis Architect — Home">
-<meta property="og:description" content="WordPress platforms, Telegram automation, LLM pipelines and security tooling — designed as layered systems and engineered to keep working.">
+<meta property="og:description" content="Noctis — independent developer. WordPress sites, WooCommerce stores, custom plugins and Telegram bots. Built and maintained in Persian and English.">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <script>
 (function () {
@@ -28,7 +28,7 @@
     d.dir = lang === 'fa' ? 'rtl' : 'ltr';
     d.dataset.theme = theme;
     var meta = document.querySelector('meta[name=theme-color]');
-    if (meta) meta.content = theme === 'light' ? '#f2ede3' : '#0d0e11';
+    if (meta) meta.content = theme === 'light' ? '#f4f4f1' : '#0d0e11';
     if (sessionStorage.getItem('nx-nav')) {
       d.classList.add('nx');
       sessionStorage.removeItem('nx-nav');
@@ -88,12 +88,12 @@
 </header>
 <nav class="mnav" aria-label="Primary"><a href="index.html" data-p="home" data-i="n_home" aria-current="page">Home</a><a href="work.html" data-p="work" data-i="n_work">Work</a><a href="about.html" data-p="about" data-i="n_about">About</a><a href="contact.html" data-p="contact" data-i="n_contact">Contact</a></nav>
 <main id="main" tabindex="-1">
-<section class="hero" data-anchor>
+<section class="hero home-hero" data-anchor>
   <div class="ht">
-    <p class="k r" data-i="k">Full-Stack & Systems Developer</p>
-    <h1 class="hd" data-i="h1">Full-Stack Software Developer.</h1>
-    <p class="sub r" data-i="sub">Mostly WordPress and WooCommerce. Also Telegram bots in Python, the occasional Flutter app, and some security work on the side.</p>
-    <div class="cta r"><a class="btn" href="work.html" data-p="work"><span data-i="c1">See the work</span><i>→</i></a><a class="btn ghost" href="contact.html" data-p="contact"><span data-i="c2">Get in touch</span></a><a class="btn ghost cv-btn" href="assets/resume/Sajjad-Noctis-Resume.pdf" download><span data-i="cv_link">Résumé (PDF)</span><i>↓</i></a></div>
+    <p class="k hstat r"><span class="hstat-dot" aria-hidden="true"></span><span data-i="home_k">Noctis · independent developer</span><span class="hstat-clock"><span data-i="home_local">Tehran</span> <time class="nx-clock" dir="ltr">--:--</time></span></p>
+    <h1 class="hd" data-i="home_title">I write software.<br> <em>Then I keep it running.</em></h1>
+    <p class="sub r" data-i="home_intro">Backends, APIs, plugins and bots in PHP, Python and Dart, from the first commit to production. Debian every day, security on the side.</p>
+    <div class="cta r"><a class="btn" href="work.html" data-p="work"><span data-i="c1">See the work</span><i aria-hidden="true">→</i></a><a class="home-hello" href="contact.html" data-p="contact"><span data-i="home_hello">Say hello</span><i aria-hidden="true">↗</i></a></div>
     <div class="find r">
       <a class="find-a" href="https://github.com/Noctis-Architect" target="_blank" rel="noopener">
         <svg class="find-i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.4a3 3 0 0 0-.8-2.3c2.7-.3 5.5-1.3 5.5-6a4.7 4.7 0 0 0-1.3-3.2 4.4 4.4 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12 12 0 0 0-6.2 0C6.2 1.6 5.1 1.9 5.1 1.9a4.4 4.4 0 0 0-.1 3.2A4.7 4.7 0 0 0 3.7 8.3c0 4.7 2.8 5.7 5.5 6a3 3 0 0 0-.8 2.3V21"/></svg>
@@ -109,41 +109,81 @@
       </a>
     </div>
   </div>
+  <div class="ticker" aria-hidden="true"><div class="ticker-in"><span>WordPress</span><span>WooCommerce</span><span>PHP</span><span>Python</span><span>Telegram bots</span><span>Flutter</span><span>FastAPI</span><span>Elementor</span><span>MCP</span><span>Debian</span><span>Burp Suite</span><span>WordPress</span><span>WooCommerce</span><span>PHP</span><span>Python</span><span>Telegram bots</span><span>Flutter</span><span>FastAPI</span><span>Elementor</span><span>MCP</span><span>Debian</span><span>Burp Suite</span></div></div>
 </section>
-<section class="sec" data-anchor>
+<section class="sec home-work" data-anchor aria-labelledby="home-work-title">
   <div class="whead r">
-    <div><p class="k" data-i="k_sel">Live client sites</p><h2 class="hd" data-i="s1">Selected sites</h2></div>
+    <h2 class="hd" id="home-work-title" data-i="home_work">Some of my work.</h2>
     <a class="more" href="work.html" data-p="work"><span data-i="all">All projects</span><i aria-hidden="true">→</i></a>
   </div>
   <div class="sites">
     <a class="site r" style="--i:0" href="projects/wp-hub.html" data-p="project">
-      <span class="site-img"><img src="assets/img/wp-hub-v2.jpg" alt="WP-Hub homepage" width="1280" height="800" loading="lazy" decoding="async"></span>
+      <span class="site-img" data-url="wphub.org"><img src="assets/img/wp-hub-v2.jpg" alt="WP-Hub homepage" width="1280" height="800" loading="lazy" decoding="async"><span class="site-cta" aria-hidden="true"><span data-i="home_open">Open project</span><i>↗</i></span></span>
       <span class="site-meta"><span class="ix">01</span><b>WP-Hub</b><span class="tg">WordPress · Security</span><i class="ar" aria-hidden="true">↗</i></span>
+      <span class="site-note" data-i="home_site_hub">Plugin vulnerabilities and site speed, in one Persian-language hub.</span>
     </a>
     <a class="site r" style="--i:1" href="projects/ashrafi-mobl.html" data-p="project">
-      <span class="site-img"><img src="assets/img/ashrafi-mobl-v2.jpg" alt="Ashrafi Mobl storefront" width="1280" height="800" loading="lazy" decoding="async"></span>
+      <span class="site-img" data-url="moblashrafi.com"><img src="assets/img/ashrafi-mobl-v2.jpg" alt="Ashrafi Mobl storefront" width="1280" height="800" loading="lazy" decoding="async"><span class="site-cta" aria-hidden="true"><span data-i="home_open">Open project</span><i>↗</i></span></span>
       <span class="site-meta"><span class="ix">02</span><b>Ashrafi Mobl</b><span class="tg">WooCommerce · Flutter</span><i class="ar" aria-hidden="true">↗</i></span>
+      <span class="site-note" data-i="home_site_ashrafi">From a furniture workshop to a store, custom CRM and companion app.</span>
     </a>
     <a class="site r" style="--i:2" href="projects/blush-blossom.html" data-p="project">
-      <span class="site-img"><img src="assets/img/blush-blossom-v2.jpg" alt="Blush Blossom flower shop" width="1280" height="800" loading="lazy" decoding="async"></span>
+      <span class="site-img" data-url="blushblossom.co.uk"><img src="assets/img/blush-blossom-v2.jpg" alt="Blush Blossom flower shop" width="1280" height="800" loading="lazy" decoding="async"><span class="site-cta" aria-hidden="true"><span data-i="home_open">Open project</span><i>↗</i></span></span>
       <span class="site-meta"><span class="ix">03</span><b>Blush Blossom</b><span class="tg">Elementor · WordPress</span><i class="ar" aria-hidden="true">↗</i></span>
+      <span class="site-note" data-i="home_site_blush">A flower shop in the UK. Built with WordPress and Elementor.</span>
     </a>
     <a class="site r" style="--i:3" href="projects/viratandis.html" data-p="project">
-      <span class="site-img"><img src="assets/img/viratandis-v2.jpg" alt="Vira Tandis storefront" width="1280" height="800" loading="lazy" decoding="async"></span>
+      <span class="site-img" data-url="viratandis.ir"><img src="assets/img/viratandis-v2.jpg" alt="Vira Tandis storefront" width="1280" height="800" loading="lazy" decoding="async"><span class="site-cta" aria-hidden="true"><span data-i="home_open">Open project</span><i>↗</i></span></span>
       <span class="site-meta"><span class="ix">04</span><b>Vira Tandis</b><span class="tg">WooCommerce · RTL</span><i class="ar" aria-hidden="true">↗</i></span>
+      <span class="site-note" data-i="home_site_vira">Handmade awards, a Persian storefront, and a custom-order catalog.</span>
     </a>
   </div>
 </section>
-<section class="sec" data-anchor>
-  <h2 class="hd" data-i="s2">What I usually work on</h2>
-  <div class="svc">
-    <div class="r" style="--i:0"><div><h3 data-i="sv0t">WordPress &amp; WooCommerce</h3><p data-i="sv0d">Custom plugins, store setups, caching and speed work. When theme options run out, I go into the PHP and the database.</p></div></div>
-    <div class="r" style="--i:1"><div><h3 data-i="sv1t">Telegram bots</h3><p data-i="sv1d">Bots for groups and channels, in Python. Lately with an LLM for moderation and replies where fixed rules weren't enough.</p></div></div>
-    <div class="r" style="--i:2"><div><h3 data-i="sv2t">Security work</h3><p data-i="sv2d">Audits of WordPress sites, and small tools built from what I find during pentesting.</p></div></div>
-    <div class="r" style="--i:3"><div><h3 data-i="sv3t">Mobile apps</h3><p data-i="sv3d">Flutter apps, and turning existing websites into Android apps.</p></div></div>
+<section class="sec home-notebook" data-anchor>
+  <div class="home-about r">
+    <h2 class="hd" data-i="home_about_title">A bit about me.</h2>
+    <p class="home-about-lead" data-i="home_about_lead">Self-taught. Freelance.<br>Usually on Debian.</p>
+    <p data-i="home_about_body">Most of my work is in WordPress and WooCommerce: building stores, writing plugins, and getting into PHP and the database when the settings aren’t enough.</p>
+    <p data-i="home_about_extra">Away from client work, I write Python bots, make Flutter apps, and explore web security. Some of those experiments end up here.</p>
+    <a class="more" href="about.html" data-p="about"><span data-i="home_about_link">More about me</span><i aria-hidden="true">→</i></a>
+  </div>
+  <div class="home-code">
+    <div class="home-code-head r">
+      <h2 class="hd" data-i="home_code_title">On my GitHub.</h2>
+      <a class="home-github" href="https://github.com/Noctis-Architect" target="_blank" rel="noopener">@Noctis-Architect <span aria-hidden="true">↗</span></a>
+    </div>
+    <div class="repo-list">
+      <article class="repo r">
+        <span class="repo-path" dir="ltr">Noctis-Architect/<b>press-agent</b></span>
+        <div class="repo-heading"><h3><a href="projects/press-agent.html" data-p="project">PressAgent</a></h3><span class="repo-stack" dir="ltr"><span><i style="--c:#777bb4"></i>PHP</span><span><i style="--c:#3178c6"></i>TypeScript</span></span></div>
+        <p data-i="home_repo_press">A bridge between AI coding assistants and WordPress. Read and edit Elementor layouts through MCP, with snapshots before changes.</p>
+        <a class="repo-source" href="https://github.com/Noctis-Architect/press-agent" target="_blank" rel="noopener"><span data-i="home_source">Read the code</span><span class="sr-only"> — PressAgent</span><i aria-hidden="true">↗</i></a>
+      </article>
+      <article class="repo r">
+        <span class="repo-path" dir="ltr">Noctis-Architect/<b>woodesk</b></span>
+        <div class="repo-heading"><h3><a href="projects/woodesk.html" data-p="project">WooDesk</a></h3><span class="repo-stack" dir="ltr"><span><i style="--c:#3572a5"></i>Python</span><span>WooCommerce</span></span></div>
+        <p data-i="home_repo_woo">A desktop workspace for WooCommerce products, posts and media, with an AI assistant for the repetitive content work.</p>
+        <a class="repo-source" href="https://github.com/Noctis-Architect/woodesk" target="_blank" rel="noopener"><span data-i="home_source">Read the code</span><span class="sr-only"> — WooDesk</span><i aria-hidden="true">↗</i></a>
+      </article>
+      <article class="repo r">
+        <span class="repo-path" dir="ltr">Noctis-Architect/<b>gdoc</b></span>
+        <div class="repo-heading"><h3><a href="projects/group-doctor.html" data-p="project">Group Doctor</a></h3><span class="repo-stack" dir="ltr"><span><i style="--c:#3572a5"></i>Python</span><span>Telegram</span></span></div>
+        <p data-i="home_repo_gdoc">A Telegram moderation bot that checks messages against a group’s rules using a language model, not just a list of blocked words.</p>
+        <a class="repo-source" href="https://github.com/Noctis-Architect/gdoc" target="_blank" rel="noopener"><span data-i="home_source">Read the code</span><span class="sr-only"> — Group Doctor</span><i aria-hidden="true">↗</i></a>
+      </article>
+      <article class="repo r">
+        <span class="repo-path" dir="ltr">Noctis-Architect/<b>price-api</b></span>
+        <div class="repo-heading"><h3><a href="projects/price-api.html" data-p="project">Price API</a></h3><span class="repo-stack" dir="ltr"><span><i style="--c:#3572a5"></i>Python</span><span>API</span></span></div>
+        <p data-i="home_repo_price">A small exchange-rate API with fallback sources and caching. One of the less visible pieces behind a store.</p>
+        <a class="repo-source" href="https://github.com/Noctis-Architect/price-api" target="_blank" rel="noopener"><span data-i="home_source">Read the code</span><span class="sr-only"> — Price API</span><i aria-hidden="true">↗</i></a>
+      </article>
+    </div>
   </div>
 </section>
-<section class="band"><div class="r"><h2 class="hd" data-i="cb">Have a project in mind?</h2><div class="cta"><a class="btn" href="contact.html" data-p="contact"><span data-i="c2">Get in touch</span><i>→</i></a></div></div></section>
+<section class="home-contact" data-anchor>
+  <div class="r"><p data-i="home_contact_note">A project, a question, or just a hello.</p><a href="contact.html" data-p="contact"><span data-i="home_contact_title">Let’s talk.</span><b class="orbit" aria-hidden="true"><svg viewBox="0 0 120 120"><path id="orbit-path" fill="none" d="M60 60m-47 0a47 47 0 1 1 94 0a47 47 0 1 1-94 0"/><text><textPath href="#orbit-path" textLength="292" lengthAdjust="spacing">TELEGRAM FIRST · SAME-DAY REPLIES · FA / EN · </textPath></text></svg><i>↗</i></b></a></div>
+  <a class="more r" href="assets/resume/Sajjad-Noctis-Resume.pdf" download><span data-i="cv_link">Résumé (PDF)</span><i aria-hidden="true">↓</i></a>
+</section>
 </main>
 <footer class="ft">
  <div class="ftin">
@@ -162,7 +202,7 @@
    <h4 data-i="ft_else">Elsewhere</h4>
    <a href="https://github.com/Noctis-Architect" target="_blank" rel="noopener" data-i="gh">GitHub</a>
    <a href="https://t.me/Noctis_Architect" target="_blank" rel="noopener" data-i="tg">Telegram channel</a>
-   <a href="https://instagram.com/techarch_offical" target="_blank" rel="noopener" data-i="ig">Instagram</a>
+   <a href="https://instagram.com/nocarch" target="_blank" rel="noopener" data-i="ig">Instagram</a>
    <a href="assets/resume/Sajjad-Noctis-Resume.pdf" download data-i="cv_link">Résumé (PDF)</a>
   </div>
  </div>
@@ -175,5 +215,6 @@
 <script src="assets/js/scene.js"></script>
 <script src="assets/js/app.js"></script>
 <script src="assets/js/console.js"></script>
+<script src="assets/js/ui.js"></script>
 </body>
 </html>

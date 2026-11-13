@@ -28,7 +28,7 @@
     d.dir = lang === 'fa' ? 'rtl' : 'ltr';
     d.dataset.theme = theme;
     var meta = document.querySelector('meta[name=theme-color]');
-    if (meta) meta.content = theme === 'light' ? '#f2ede3' : '#0d0e11';
+    if (meta) meta.content = theme === 'light' ? '#f4f4f1' : '#0d0e11';
     if (sessionStorage.getItem('nx-nav')) {
       d.classList.add('nx');
       sessionStorage.removeItem('nx-nav');
@@ -115,7 +115,7 @@
    <h4 data-i="ft_else">Elsewhere</h4>
    <a href="https://github.com/Noctis-Architect" target="_blank" rel="noopener" data-i="gh">GitHub</a>
    <a href="https://t.me/Noctis_Architect" target="_blank" rel="noopener" data-i="tg">Telegram channel</a>
-   <a href="https://instagram.com/techarch_offical" target="_blank" rel="noopener" data-i="ig">Instagram</a>
+   <a href="https://instagram.com/nocarch" target="_blank" rel="noopener" data-i="ig">Instagram</a>
    <a href="assets/resume/Sajjad-Noctis-Resume.pdf" download data-i="cv_link">Résumé (PDF)</a>
   </div>
  </div>
@@ -128,5 +128,6 @@
 <script src="assets/js/scene.js"></script>
 <script src="assets/js/app.js"></script>
 <script src="assets/js/console.js"></script>
+<script src="assets/js/ui.js"></script>
 </body>
 </html>
